@@ -33,7 +33,13 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    controller: 'ViewController',
+    action: 'index'
+  },
+
+  'get /dashboard': {
+    controller: 'ViewController',
+    action: 'dashboard'
   }
 
   /***************************************************************************

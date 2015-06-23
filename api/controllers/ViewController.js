@@ -6,6 +6,17 @@
  */
 
 module.exports = {
-	
-};
 
+	index: function(req, res){
+
+		res.view();
+
+	},
+
+	dashboard: function(req, res){
+
+		res.view();
+
+	}
+
+};

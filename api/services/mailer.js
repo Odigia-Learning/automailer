@@ -24,7 +24,7 @@ module.exports = {
 
     var email = {
         from:       user.email,
-        bcc:        to,
+        to:        to,
         subject:    subject,
         html:       messageBody
       }

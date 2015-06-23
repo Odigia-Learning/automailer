@@ -1,0 +1,17 @@
+<h1>Dashboard</h1>
+
+
+<form action="/message/create" method="post" class="">
+  <input type="text" name="subject" value="" placeholder="subject">
+  <input type="text" name="addresses" value="" placeholder="To:">
+  <textarea name="message" placeholder="Message Body"></textarea>
+  <input type="submit" value="Submit">
+
+</form>
+
+
+
+<form action="/message/groupSend" method="post" class="" enctype="multipart/form-data">
+  <input type="file" name="csv">
+  <input type="submit" value="submit">
+</form>
