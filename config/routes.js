@@ -40,6 +40,21 @@ module.exports.routes = {
   'get /dashboard': {
     controller: 'ViewController',
     action: 'dashboard'
+  },
+
+  'post /message/groupSend': {
+    controller: 'MessageController',
+    action: 'groupSend'
+  },
+
+  'get /auth/google': {
+    controller: 'AuthController',
+    action: 'google'
+  },
+
+  'post /auth/google': {
+    controller: 'AuthController',
+    action: 'google'
   }
 
   /***************************************************************************
