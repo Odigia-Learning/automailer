@@ -51,9 +51,6 @@ passport.use(new GoogleStrategy({
   accessType: 'offline',
   approval_prompt: true
 }, function(accessToken, refreshToken, properties, done) {
-  console.log(accessToken);
-  console.log(refreshToken);
-  console.log(properties);
 
   User.findOne({googleId: properties.id}, function(err, user){
     if(err){

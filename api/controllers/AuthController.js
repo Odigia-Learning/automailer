@@ -11,9 +11,6 @@ module.exports = {
 	google: function(req, res){
 
     passport.authenticate('google', { failureRedirect: '/failed' }, function(err, user, info){
-			if(err) console.log(err);
-			if(user) console.log(user);
-			if(info) console.log(info);
 
       if ((err) || (!user)) {
 
@@ -28,7 +25,6 @@ module.exports = {
         req.logIn(user, function(err){
           if (err) {
             res.send(err);
-            console.log(err);
             res.send(500, err);
           } else {
 

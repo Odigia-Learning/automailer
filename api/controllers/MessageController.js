@@ -52,15 +52,11 @@ module.exports = {
 
 		var params = req.params.all();
 
-		console.log(params);
-
 		req.file('csv').upload(function (err, uploadedFiles){
   		if (err){
-				console.log(err)
 				return res.badRequest(err);
 			}
 			if(uploadedFiles){
-				console.log(uploadedFiles);
 
 				var obj = {
 					filename: uploadedFiles[0].fd
@@ -68,12 +64,10 @@ module.exports = {
 
 				csv.parse(obj, function(err, json){
 					if(err){
-						console.log(err)
+
 						return res.badRequest(err);
 					}
 					if(json){
-						console.log(json);
-
 
 						async.eachSeries(json, function(item, asyncCB){
 
@@ -93,22 +87,18 @@ module.exports = {
 								pageUrl: params.pageUrl
 							};
 
-							console.log(entry);
-
 							res.render('emails/mail.ejs', entry, function(err, emailBody){
 								if(err){
-									console.log(err);
 									asyncCB();
 								}
 								if(emailBody){
 									mailer.send(req.user, entry.email, params.subject, emailBody, function(err, done){
 										if(err){
 
-											console.log(err);
 											asyncCB();
 										}
 										if(done){
-											console.log(done);
+
 											asyncCB();
 
 										}
