@@ -1,23 +1,15 @@
 <h1>Dashboard</h1>
 
-<!--
-<form action="/message/create" method="post" class="">
-  <input type="text" name="subject" value="" placeholder="subject">
-  <input type="text" name="addresses" value="" placeholder="To:">
-  <textarea name="message" placeholder="Message Body"></textarea>
-  <input type="submit" value="Submit">
-
-</form>
--->
-
-
 <form action="/message/groupSend" method="post" class="" enctype="multipart/form-data">
   <input type="text" name="fromName" value="" placeholder="From Name" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
   <input type="text" name="fromPhone" value="" placeholder="From Phone" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
   <input type="text" name="subject" value="" placeholder="Email Subject" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
   <input type="text" name="pageUrl" value="" placeholder="Landing Page Url" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <textarea name="message" placeholder="Message Body">
+    <p>Are you looking for a way to improve student engagement and outcomes? Developed with the support of the primary e-learning industry thought leaders, Odigia makes teaching and learning both simple and engaging. In addition, Odigia can help reduce your students&rsquo; textbook costs by up to 90%!</p>
+    <p>I wanted to reach out to you because our team has designed and developed an exciting new course catalog for college professors. Odigia tracks student learning data in real-time and brings courses to life with interactives and self-directed learning that naturally engages all learning styles.</p>
+    <p>I would enjoy the opportunity to have a quick 10-minute call to discuss how Odigia can help you drive improved student engagement and outcomes. Please feel free to send me a few times next week that would work well for you. I look forward to speaking with you!</p>
+  </textarea>
   <input type="file" name="csv" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
-  <textarea name="message" placeholder="Message Body"></textarea>
-
   <input type="submit" value="submit" style="dislay: block; height: 30px; width: 50%; padding: 10px; font-size: 18px; margin-top: 10px;">
 </form>

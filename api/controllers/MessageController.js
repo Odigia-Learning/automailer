@@ -28,11 +28,8 @@ module.exports = {
 				addresses = addresses.replace(/\s/g,'');
 				addresses = addresses.split(',');
 
-				console.log(addresses);
-
 				mailer.send(req.user, addresses, params.subject, params.message, function(err, sent){
 					if(err){
-						console.log(err);
 						req.flash("message", '<div class="alert alert-danger">Error in Message Creation</div>');
 						return res.redirect("/dashboard");
 					}
@@ -52,6 +49,8 @@ module.exports = {
 
 		var params = req.params.all();
 
+		console.log(params.message);
+		
 		req.file('csv').upload(function (err, uploadedFiles){
   		if (err){
 				return res.badRequest(err);
