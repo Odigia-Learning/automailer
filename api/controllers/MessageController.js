@@ -50,6 +50,10 @@ module.exports = {
 
 	groupSend: function(req, res){
 
+		var params = req.params.all();
+
+		console.log(params);
+
 		req.file('csv').upload(function (err, uploadedFiles){
   		if (err){
 				console.log(err)
@@ -81,23 +85,39 @@ module.exports = {
 								state: item['NC'],
 								email: item['EMAIL'],
 								title: item['TITLE'],
-								phone: item['PHONE']
+								phone: item['PHONE'],
+								message: params.message,
+								fromName: params.fromName,
+								fromPhone: params.fromPhone,
+								fromEmail: req.user.email,
+								pageUrl: params.pageUrl
 							};
 
 							console.log(entry);
 
-							mailer.send(req.user, entry.email, 'Test Email Subject', 'Test Email Body for' + entry.firstName + ' ' + entry.Lastname, function(err, done){
+							res.render('emails/mail.ejs', entry, function(err, emailBody){
 								if(err){
-
 									console.log(err);
 									asyncCB();
 								}
-								if(done){
-									console.log(done);
-									asyncCB();
+								if(emailBody){
+									mailer.send(req.user, entry.email, params.subject, emailBody, function(err, done){
+										if(err){
 
+											console.log(err);
+											asyncCB();
+										}
+										if(done){
+											console.log(done);
+											asyncCB();
+
+										}
+									});
 								}
+
 							});
+
+
 
 							// res.render('emails/main.ejs', {data: entry}, function(err, emailBody){
 							// 	if(err){

@@ -1,6 +1,6 @@
 <h1>Dashboard</h1>
 
-
+<!--
 <form action="/message/create" method="post" class="">
   <input type="text" name="subject" value="" placeholder="subject">
   <input type="text" name="addresses" value="" placeholder="To:">
@@ -8,10 +8,16 @@
   <input type="submit" value="Submit">
 
 </form>
-
+-->
 
 
 <form action="/message/groupSend" method="post" class="" enctype="multipart/form-data">
-  <input type="file" name="csv">
-  <input type="submit" value="submit">
+  <input type="text" name="fromName" value="" placeholder="From Name" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <input type="text" name="fromPhone" value="" placeholder="From Phone" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <input type="text" name="subject" value="" placeholder="Email Subject" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <input type="text" name="pageUrl" value="" placeholder="Landing Page Url" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <input type="file" name="csv" style="dislay: block; width: 50%; padding: 10px; font-size: 18px; margin-bottom: 10px;">
+  <textarea name="message" placeholder="Message Body"></textarea>
+
+  <input type="submit" value="submit" style="dislay: block; height: 30px; width: 50%; padding: 10px; font-size: 18px; margin-top: 10px;">
 </form>

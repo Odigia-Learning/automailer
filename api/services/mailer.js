@@ -37,6 +37,12 @@ module.exports = {
       }
     });
 
+  },
+
+  template: function(data, callback){
+
+    
+
   }
 
 };
